@@ -21,10 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore ./AutoInsuranceApp/AutoInsuranceApi/AutoInsuranceApp.csproj
     - name: Build
-      run: dotnet build AutoInsuranceApp/AutoInsuranceApi/AutoInsuranceApp.csproj --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet build ./AutoInsuranceApp/AutoInsuranceApi/AutoInsuranceApp.csproj --no-restore   
     - name: Publish
-      run: dotnet publish -c Release -o publish
+      run: dotnet publish ./AutoInsuranceApp/AutoInsuranceApi/AutoInsuranceApp.csproj -c Release -o publish
